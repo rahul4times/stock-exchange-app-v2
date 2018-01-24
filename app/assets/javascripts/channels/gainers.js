@@ -24,14 +24,14 @@ App.gainers = App.cable.subscriptions.create('MarketChannel', {
 
       if(responseFromChannel.most_active[i].change < 0){
         priceChange.innerHTML = "<span class='text-danger'>" +
-        "<i class='fa fa-caret-down fa-2x'></i>  " + responseFromChannel.most_active[i].change.toFixed(2) +
+        "<i class='fa fa-arrow-down'></i>  " + responseFromChannel.most_active[i].change.toFixed(2) +
         " (" + ((responseFromChannel.most_active[i].changePercent) * 100).toFixed(2) + "%)" + "</span>";
       } else if (responseFromChannel.most_active[i].change > 0) {
         priceChange.innerHTML = "<span class='text-success'>" +
-        "<i class='fa fa-caret-up fa-2x'></i>  " + responseFromChannel.most_active[i].change.toFixed(2) +
-        " (" + ((responseFromChannel.most_active[i].changePercent) * 100).toFixed(2) + " )" + "</span>";
+        "<i class='fa fa-arrow-up'></i>  " + responseFromChannel.most_active[i].change.toFixed(2) +
+        " (" + ((responseFromChannel.most_active[i].changePercent) * 100).toFixed(2) + " %)" + "</span>";
       } else {
-        priceChange.innerHTML = " -- " + " -- ";
+        priceChange.innerHTML = "<i class='fa fa-minus'></i>";
       }
       lastPrice.innerHTML = responseFromChannel.most_active[i].latestPrice;
       tableRow.appendChild(companySymbol);
