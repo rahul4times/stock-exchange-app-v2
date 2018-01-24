@@ -1,0 +1,11 @@
+<div id="gainer">
+
+</div>
+
+<script type="text/javascript">
+  setInterval(() => {
+    fetch('/get_gainers').then(() => {
+      console.log("I am live!!!");
+    });
+  }, 3000);
+</script>
