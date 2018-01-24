@@ -54,6 +54,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0'
 gem 'open-iconic-rails'
+gem "font-awesome-rails"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
