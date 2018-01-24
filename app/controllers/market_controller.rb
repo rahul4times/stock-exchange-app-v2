@@ -6,12 +6,12 @@ class MarketController < ApplicationController
 
   def get_gainers
     puts "this is firing"
-    response = open('https://api.iextrading.com/1.0/stock/aapl/quote').read
+    mostActiveResponse = open('https://api.iextrading.com/1.0/stock/market/list/mostactive').read
 
     # Broadcasting data received from api call above to market channel
     # Function broadcast, [channel name], [data in json form], [status code]
     ActionCable.server.broadcast 'market_channel',
-      top_gainers: JSON.parse(response)
+      most_active: JSON.parse(mostActiveResponse)
 
   end
 

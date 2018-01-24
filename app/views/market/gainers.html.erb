@@ -7,7 +7,7 @@
       <div class="form-group">
       <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter symbol">
     </div>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Search</a>
+    <a class="btn btn-primary btn-sm" href="#" role="button">Search</a>
     </form>
   </p>
 </div>
@@ -16,8 +16,18 @@
     <div class="card mb-3">
       <h3 class="card-header text-info">Most Active</h3>
       <div class="card-body">
-        <h5 class="card-title">Lorem ipsum</h5>
-        <h6 class="card-subtitle text-muted">Lorem ipsum</h6>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Symbol</th>
+              <th scope="col">Change</th>
+              <th scope="col">Last Price</th>
+            </tr>
+          </thead>
+          <tbody id="most_active">
+
+          </tbody>
+        </table>
       </div>
       <div class="card-footer text-muted">
         Last updated: Jan 23 2018

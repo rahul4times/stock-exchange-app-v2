@@ -106,6 +106,8 @@ GEM
     nio4r (2.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
+    open-iconic-rails (0.0.1)
+      rails (>= 3.1)
     orm_adapter (0.5.0)
     pg (0.21.0)
     popper_js (1.12.9)
@@ -207,6 +209,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  open-iconic-rails
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.4)
