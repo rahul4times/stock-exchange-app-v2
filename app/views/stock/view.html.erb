@@ -2,3 +2,17 @@
 <p>Find me in app/views/stock/view.html.erb</p>
 
 <h1>Your search: <%= @query %></h1>
+
+
+
+<div id="user_stock">
+
+</div>
+
+<script type="text/javascript">
+  setInterval(() => {
+    fetch('/stock/get_view/<%= @query %>').then(() => {
+      console.log("I fire every 3 sec!!!");
+    });
+  }, 3000);
+</script>

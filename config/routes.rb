@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  # get 'stock/view'
 
   root to: 'market#gainers'
   get 'get_gainers', to: 'market#get_gainers'
 
-  post 'stock/view' => 'stock#view', as: 'search_stock'
+
+  # get 'stock/view', to: 'stock#view'
+  # root to:'stock#view'
+  get 'stock/get_view/:stock', to: 'stock#get_view'
+  get 'stock/view' => 'stock#view', as: 'search_stock'
 
   devise_for :users
 
