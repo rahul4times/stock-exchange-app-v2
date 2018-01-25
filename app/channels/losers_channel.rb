@@ -1,4 +1,4 @@
-class MarketChannel < ApplicationCable::Channel
+class LosersChannel < ApplicationCable::Channel
 
 
   def subscribed
@@ -8,8 +8,8 @@ class MarketChannel < ApplicationCable::Channel
     puts 'User joined!'
     puts('+'*90)
 
-    stream_from 'market_channel'
-    
+    stream_from 'losers_channel'
+
   end
 
   def unsubscribed

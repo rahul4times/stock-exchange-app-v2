@@ -14,7 +14,7 @@ class MarketController < ApplicationController
 
     # Broadcasting data received from api call above to market channel
     # Function broadcast, [channel name], [data in json form], [status code]
-    ActionCable.server.broadcast 'market_channel',
+    ActionCable.server.broadcast 'active_channel',
       most_active: JSON.parse(mostActiveResponse)
 
     ActionCable.server.broadcast 'gainers_channel',
