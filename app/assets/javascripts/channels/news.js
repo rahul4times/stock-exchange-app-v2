@@ -15,18 +15,22 @@ App.gainers = App.cable.subscriptions.create('NewsChannel', {
      $(tenNewsDiv).empty();
 
      for(let i=0; i<responseFromChannel.ten_news.length; i++){
-       let newsDataTime = document.createElement('p');
+       let newsDataTime = document.createElement('h6');
        let newsHeading = document.createElement('h5');
        let newsSummary = document.createElement('p');
-       let pageBreak = document.createElement('br')
-       newsDataTime.innerHTML = responseFromChannel.ten_news[i].datetime +
+       let horizontalLine = document.createElement('hr');
+       let pageBreak = document.createElement('br');
+       newsDataTime.innerHTML = responseFromChannel.ten_news[i].datetime.substr(0, 10)+ ", " +
+       responseFromChannel.ten_news[i].datetime.substr(11, 5) +
         " | " + responseFromChannel.ten_news[i].source;
-       newsHeading.innerHTML = responseFromChannel.ten_news[i].headline;
+       newsHeading.innerHTML =
+       "<a href=" + responseFromChannel.ten_news[i].url + ">" + responseFromChannel.ten_news[i].headline + "</a>";
        newsSummary.innerHTML = responseFromChannel.ten_news[i].summary;
 
        tenNewsDiv.appendChild(newsDataTime);
        tenNewsDiv.appendChild(newsHeading);
        tenNewsDiv.appendChild(newsSummary);
+       tenNewsDiv.appendChild(horizontalLine);
        tenNewsDiv.appendChild(pageBreak);
      }
   }
