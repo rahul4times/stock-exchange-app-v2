@@ -3,12 +3,13 @@
   <p class="lead">US market is open | Jan 23 2018</p>
   <hr class="my-4">
   <p class="lead">
-    <form>
-      <div class="form-group">
-      <input type="text" class="form-control" placeholder="Enter symbol">
+
+    <div class="form-group">
+      <%= form_tag search_stock_path do %>
+        <input type="text" name="query" class="form-control" placeholder="Enter symbol">
+      <% end %>
     </div>
-    <a class="btn btn-primary btn-sm" href="#" role="button"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
-    </form>
+
   </p>
 </div>
 

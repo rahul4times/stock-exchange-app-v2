@@ -14,7 +14,6 @@ class MarketController < ApplicationController
 
     lastTenNewsResponse = open('https://api.iextrading.com/1.0/stock/market/news/last/10').read
 
-    lastTenNewsResponse = open('https://api.iextrading.com/1.0/stock/market/news/last/10').read
 
     # Broadcasting data received from api call above to market channel
     # Function broadcast, [channel name]: [data in json form], [status code]
