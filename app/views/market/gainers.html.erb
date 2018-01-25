@@ -39,8 +39,18 @@
     <div class="card mb-3">
       <h3 class="card-header text-success">Gainers</h3>
       <div class="card-body">
-        <h5 class="card-title">Lorem ipsum</h5>
-        <h6 class="card-subtitle text-muted">Lorem ipsum</h6>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Symbol</th>
+              <th scope="col">Change</th>
+              <th scope="col">Last Price</th>
+            </tr>
+          </thead>
+          <tbody id="most_gainers">
+
+          </tbody>
+        </table>
       </div>
       <div class="card-footer text-muted">
         Last updated: Jan 23 2018
@@ -64,7 +74,7 @@
 <script type="text/javascript">
   setInterval(() => {
     fetch('/get_gainers').then(() => {
-      console.log("I am live!!!");
+
     });
   }, 3000);
 </script>

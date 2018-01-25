@@ -2,7 +2,7 @@ App.gainers = App.cable.subscriptions.create('MarketChannel', {
   received: function(data) {
     let responseFromChannel = data;
 
-    console.log("Data from API: ", responseFromChannel.most_active);
+    // console.log("Most Active: ", responseFromChannel.most_active);
 
     this.renderActive(responseFromChannel);
     return;
@@ -31,7 +31,7 @@ App.gainers = App.cable.subscriptions.create('MarketChannel', {
         "<i class='fa fa-arrow-up'></i>  " + responseFromChannel.most_active[i].change.toFixed(2) +
         " (" + ((responseFromChannel.most_active[i].changePercent) * 100).toFixed(2) + " %)" + "</span>";
       } else {
-        priceChange.innerHTML = "<i class='fa fa-minus'></i>";
+        priceChange.innerHTML = "<i class='fa fa-minus'></i> <i class='fa fa-minus'></i>";
       }
       lastPrice.innerHTML = responseFromChannel.most_active[i].latestPrice;
       tableRow.appendChild(companySymbol);
