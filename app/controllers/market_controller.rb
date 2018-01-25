@@ -17,18 +17,10 @@ class MarketController < ApplicationController
     lastTenNewsResponse = open('https://api.iextrading.com/1.0/stock/market/news/last/10').read
 
     # Broadcasting data received from api call above to market channel
-    # Function broadcast, [channel name], [data in json form], [status code]
-    ActionCable.server.broadcast 'active_channel',
-      most_active: JSON.parse(mostActiveResponse)
+    # Function broadcast, [channel name]: [data in json form], [status code]
+    ActionCable.server.broadcast 'market_channel',
+      most_active: JSON.parse(mostActiveResponse), most_gainers: JSON.parse(mostGainersResponse), most_losers: JSON.parse(mostLosersResponse), ten_news: JSON.parse(lastTenNewsResponse)
 
-    ActionCable.server.broadcast 'gainers_channel',
-      most_gainers: JSON.parse(mostGainersResponse)
-
-    ActionCable.server.broadcast 'losers_channel',
-      most_losers: JSON.parse(mostLosersResponse)
-
-    ActionCable.server.broadcast 'news_channel',
-      ten_news: JSON.parse(lastTenNewsResponse)
 
   end
 

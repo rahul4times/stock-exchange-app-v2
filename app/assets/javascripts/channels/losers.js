@@ -1,13 +1,13 @@
-App.gainers = App.cable.subscriptions.create('LosersChannel', {
+App.gainers = App.cable.subscriptions.create('MarketChannel', {
   received: function(data) {
     let responseFromChannel = data;
 
     // console.log("Losers: ", responseFromChannel.most_losers);
 
-    this.renderActive(responseFromChannel);
+    this.renderLosers(responseFromChannel);
     return;
   },
-  renderActive: function(responseFromChannel) {
+  renderLosers: function(responseFromChannel) {
 
     let response = responseFromChannel.most_losers;
     var losersTable = document.getElementById('most_losers');

@@ -1,11 +1,12 @@
-App.gainers = App.cable.subscriptions.create('ActiveChannel', {
+App.gainers = App.cable.subscriptions.create('MarketChannel', {
   received: function(data) {
     let responseFromChannel = data;
-
     // console.log("Most Active: ", responseFromChannel.most_active);
 
     this.renderActive(responseFromChannel);
+
     return;
+
   },
   renderActive: function(responseFromChannel) {
 
