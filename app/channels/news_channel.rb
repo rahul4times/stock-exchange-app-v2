@@ -1,4 +1,4 @@
-class LastTenNewsChannel < ApplicationCable::Channel
+class NewsChannel < ApplicationCable::Channel
 
 
   def subscribed
@@ -8,7 +8,7 @@ class LastTenNewsChannel < ApplicationCable::Channel
     puts 'User joined!'
     puts('+'*90)
 
-    stream_from 'lastnews_channel'
+    stream_from 'news_channel'
 
   end
 

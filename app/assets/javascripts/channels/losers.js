@@ -2,7 +2,7 @@ App.gainers = App.cable.subscriptions.create('LosersChannel', {
   received: function(data) {
     let responseFromChannel = data;
 
-    console.log("Losers: ", responseFromChannel.most_losers);
+    // console.log("Losers: ", responseFromChannel.most_losers);
 
     this.renderActive(responseFromChannel);
     return;

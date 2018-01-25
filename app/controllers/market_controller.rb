@@ -27,8 +27,8 @@ class MarketController < ApplicationController
     ActionCable.server.broadcast 'losers_channel',
       most_losers: JSON.parse(mostLosersResponse)
 
-    ActionCable.server.broadcast 'lastnews_channel',
-      ten_news: JSON.parse(lastTenNewsResponse) 
+    ActionCable.server.broadcast 'news_channel',
+      ten_news: JSON.parse(lastTenNewsResponse)
 
   end
 
