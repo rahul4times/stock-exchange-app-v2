@@ -36,13 +36,8 @@ App.cable.subscriptions.create('StockChannel', {
          changePricePercent.innerHTML = "<i class='fa fa-minus'></i> <i class='fa fa-minus'></i>";
        }
 
-
-
-
        companyHeaderDiv.appendChild(nameSymbol);
        companyHeaderDiv.appendChild(latestPrice);
        companyHeaderDiv.appendChild(changePricePercent);
-
-
   }
 });

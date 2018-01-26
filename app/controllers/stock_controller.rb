@@ -9,7 +9,7 @@ class StockController < ApplicationController
 
   def get_view
 
-    userSearchResponse = open("https://api.iextrading.com/1.0/stock/#{params[:stock]}/batch?types=quote,summary,news,chart,financials&range=1m&last=10").read
+    userSearchResponse = open("https://api.iextrading.com/1.0/stock/#{params[:stock]}/batch?types=quote,stats,news,chart,financials&range=1m&last=10").read
 
     ActionCable.server.broadcast 'stock_channel',
       users_stock: JSON.parse(userSearchResponse)
