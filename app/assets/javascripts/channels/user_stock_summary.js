@@ -2,7 +2,7 @@ App.cable.subscriptions.create('StockChannel', {
   received: function(data) {
     let responseFromChannel = data;
 
-    console.log("Summary: ", responseFromChannel.users_stock);
+    //console.log("Summary: ", responseFromChannel.users_stock);
 
     this.renderUserStockQuote(responseFromChannel);
     return;
@@ -22,11 +22,11 @@ App.cable.subscriptions.create('StockChannel', {
     let exDividendDate = document.getElementById('ex_dividend_date');
     let peRatio = document.getElementById('pe_ratio');
 
-    volume.innerHTML = responseFromChannel.users_stock.quote.latestVolume.toLocaleString();
+    volume.innerHTML = responseFromChannel.users_stock.quote.latestVolume ? responseFromChannel.users_stock.quote.latestVolume.toLocaleString() : "-";
 
-    avgDailyVolume.innerHTML = responseFromChannel.users_stock.quote.avgTotalVolume.toLocaleString();
+    avgDailyVolume.innerHTML = responseFromChannel.users_stock.quote.avgTotalVolume ? responseFromChannel.users_stock.quote.avgTotalVolume.toLocaleString() : "-";
 
-    previousClose.innerHTML = responseFromChannel.users_stock.quote.previousClose;
+    previousClose.innerHTML = responseFromChannel.users_stock.quote.previousClose ? responseFromChannel.users_stock.quote.previousClose : "-";
 
     fiftyTwoWeekRange.innerHTML = responseFromChannel.users_stock.quote.week52Low + " - " + responseFromChannel.users_stock.quote.week52High;
 
@@ -40,7 +40,7 @@ App.cable.subscriptions.create('StockChannel', {
 
     dividendYield.innerHTML = responseFromChannel.users_stock.stats.dividendRate + " (" + responseFromChannel.users_stock.stats.dividendYield.toFixed(3) + "%)";
 
-    exDividendDate.innerHTML = responseFromChannel.users_stock.stats.exDividendDate.substr(0, 10);
+    exDividendDate.innerHTML = responseFromChannel.users_stock.stats.exDividendDate === 0 ? "-" :responseFromChannel.users_stock.stats.exDividendDate.substr(0, 10);
 
     peRatio.innerHTML = responseFromChannel.users_stock.quote.peRatio;
 
