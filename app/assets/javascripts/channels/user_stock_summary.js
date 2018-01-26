@@ -2,42 +2,53 @@ App.cable.subscriptions.create('StockChannel', {
   received: function(data) {
     let responseFromChannel = data;
 
-    console.log("Summary: ", responseFromChannel.users_stock.news);
+    console.log("Summary: ", responseFromChannel.users_stock);
 
     this.renderUserStockQuote(responseFromChannel);
     return;
   },
   renderUserStockQuote: function(responseFromChannel) {
 
-    let response = responseFromChannel.users_stock;
-    let companyHeaderDiv = document.getElementById('company_summary');
 
-     $(companyHeaderDiv).empty();
+    let volume = document.getElementById('volume');
+    let avgDailyVolume = document.getElementById('avg_daily_volume');
+    let previousClose = document.getElementById('previous_close');
+    let fiftyTwoWeekRange = document.getElementById('fiftytwo_wk_range');
+    let marketCapital = document.getElementById('market_capital');
+    let betaBeta = document.getElementById('beta_beta');
+    let latestEps = document.getElementById('latest_eps');
+    let latestEpsDate = document.getElementById('latest_eps_date');
+    let dividendYield = document.getElementById('dividend_yield');
+    let exDividendDate = document.getElementById('ex_dividend_date');
+    let peRatio = document.getElementById('pe_ratio');
 
 
-       let nameSymbol = document.createElement('p');
-       let latestPrice = document.createElement('h1');
-       let changePricePercent = document.createElement('h3');
+    // $(volume).empty();
 
-       nameSymbol.innerHTML = '<p class="lead">' + responseFromChannel.users_stock.quote.companyName + " (" +
-       responseFromChannel.users_stock.quote.symbol + ")" + '</p>';
+    volume.innerHTML = responseFromChannel.users_stock.quote.latestVolume;
 
-       latestPrice.innerHTML = '<h1 class="display-3 text-white">' + responseFromChannel.users_stock.quote.latestPrice + '</h1>';
+    avgDailyVolume.innerHTML = responseFromChannel.users_stock.quote.avgTotalVolume;
 
-       if(responseFromChannel.users_stock.quote.change < 0){
-         changePricePercent.innerHTML = '<h3 class="text-danger">' +
-         "<i class='fa fa-arrow-down'></i>  " + responseFromChannel.users_stock.quote.change.toFixed(2) + " (" +
-         ((responseFromChannel.users_stock.quote.changePercent) * 100).toFixed(2) + "%)" + "</h3>";
-       } else if(responseFromChannel.users_stock.quote.change > 0){
-         changePricePercent.innerHTML = '<h3 class="text-success">' +
-         "<i class='fa fa-arrow-up'></i>  " + responseFromChannel.users_stock.quote.change.toFixed(2) + " (" +
-         ((responseFromChannel.users_stock.quote.changePercent) * 100).toFixed(2) + "%)" + "</h3>";
-       } else {
-         changePricePercent.innerHTML = "<i class='fa fa-minus'></i> <i class='fa fa-minus'></i>";
-       }
+    previousClose.innerHTML = responseFromChannel.users_stock.quote.previousClose;
 
-       companyHeaderDiv.appendChild(nameSymbol);
-       companyHeaderDiv.appendChild(latestPrice);
-       companyHeaderDiv.appendChild(changePricePercent);
+    fiftyTwoWeekRange.innerHTML = responseFromChannel.users_stock.quote.latestVolume;
+
+    marketCapital.innerHTML = responseFromChannel.users_stock.quote.marketCap;
+
+    betaBeta.innerHTML = responseFromChannel.users_stock.stats.beta;
+
+    latestEps.innerHTML = responseFromChannel.users_stock.stats.latestEPS;
+
+    latestEpsDate.innerHTML = responseFromChannel.users_stock.stats.latestEPSDate;
+
+    dividendYield.innerHTML = responseFromChannel.users_stock.stats.dividendYield;
+
+    exDividendDate.innerHTML = responseFromChannel.users_stock.stats.exDividendDate;
+
+    peRatio.innerHTML = responseFromChannel.users_stock.quote.peRatio;
+
+
+
+
   }
 });
