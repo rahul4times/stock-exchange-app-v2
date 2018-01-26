@@ -2,7 +2,7 @@ App.cable.subscriptions.create('StockChannel', {
   received: function(data) {
     let responseFromChannel = data;
 
-    // console.log("User Stock: ", responseFromChannel.users_stock);
+    console.log("Summary: ", responseFromChannel.users_stock.news);
 
     this.renderUserStockQuote(responseFromChannel);
     return;
@@ -10,7 +10,7 @@ App.cable.subscriptions.create('StockChannel', {
   renderUserStockQuote: function(responseFromChannel) {
 
     let response = responseFromChannel.users_stock;
-    let companyHeaderDiv = document.getElementById('company_header');
+    let companyHeaderDiv = document.getElementById('company_summary');
 
      $(companyHeaderDiv).empty();
 
