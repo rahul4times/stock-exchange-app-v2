@@ -22,33 +22,27 @@ App.cable.subscriptions.create('StockChannel', {
     let exDividendDate = document.getElementById('ex_dividend_date');
     let peRatio = document.getElementById('pe_ratio');
 
+    volume.innerHTML = responseFromChannel.users_stock.quote.latestVolume.toLocaleString();
 
-    // $(volume).empty();
-
-    volume.innerHTML = responseFromChannel.users_stock.quote.latestVolume;
-
-    avgDailyVolume.innerHTML = responseFromChannel.users_stock.quote.avgTotalVolume;
+    avgDailyVolume.innerHTML = responseFromChannel.users_stock.quote.avgTotalVolume.toLocaleString();
 
     previousClose.innerHTML = responseFromChannel.users_stock.quote.previousClose;
 
-    fiftyTwoWeekRange.innerHTML = responseFromChannel.users_stock.quote.latestVolume;
+    fiftyTwoWeekRange.innerHTML = responseFromChannel.users_stock.quote.week52Low + " - " + responseFromChannel.users_stock.quote.week52High;
 
-    marketCapital.innerHTML = responseFromChannel.users_stock.quote.marketCap;
+    marketCapital.innerHTML = responseFromChannel.users_stock.quote.marketCap.toLocaleString();
 
-    betaBeta.innerHTML = responseFromChannel.users_stock.stats.beta;
+    betaBeta.innerHTML = responseFromChannel.users_stock.stats.beta.toFixed(2);
 
     latestEps.innerHTML = responseFromChannel.users_stock.stats.latestEPS;
 
     latestEpsDate.innerHTML = responseFromChannel.users_stock.stats.latestEPSDate;
 
-    dividendYield.innerHTML = responseFromChannel.users_stock.stats.dividendYield;
+    dividendYield.innerHTML = responseFromChannel.users_stock.stats.dividendRate + " (" + responseFromChannel.users_stock.stats.dividendYield.toFixed(3) + "%)";
 
-    exDividendDate.innerHTML = responseFromChannel.users_stock.stats.exDividendDate;
+    exDividendDate.innerHTML = responseFromChannel.users_stock.stats.exDividendDate.substr(0, 10);
 
     peRatio.innerHTML = responseFromChannel.users_stock.quote.peRatio;
-
-
-
 
   }
 });
