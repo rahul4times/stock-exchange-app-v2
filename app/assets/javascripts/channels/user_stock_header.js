@@ -4,10 +4,10 @@ App.cable.subscriptions.create('StockChannel', {
 
     // console.log("User Stock: ", responseFromChannel.users_stock);
 
-    this.renderUserStockQuote(responseFromChannel);
+    this.renderUserStockHeader(responseFromChannel);
     return;
   },
-  renderUserStockQuote: function(responseFromChannel) {
+  renderUserStockHeader: function(responseFromChannel) {
 
     let response = responseFromChannel.users_stock;
     let companyHeaderDiv = document.getElementById('company_header');

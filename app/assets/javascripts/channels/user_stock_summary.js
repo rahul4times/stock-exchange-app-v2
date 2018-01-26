@@ -4,10 +4,10 @@ App.cable.subscriptions.create('StockChannel', {
 
     //console.log("Summary: ", responseFromChannel.users_stock);
 
-    this.renderUserStockQuote(responseFromChannel);
+    this.renderUserStockSummary(responseFromChannel);
     return;
   },
-  renderUserStockQuote: function(responseFromChannel) {
+  renderUserStockSummary: function(responseFromChannel) {
 
 
     let volume = document.getElementById('volume');
