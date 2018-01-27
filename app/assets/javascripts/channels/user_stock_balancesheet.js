@@ -2,7 +2,7 @@ App.cable.subscriptions.create('StockChannel', {
   received: function(data) {
     let responseFromChannel = data;
 
-    console.log("Financials: ", responseFromChannel.users_stock.financials.financials);
+    //console.log("Financials: ", responseFromChannel.users_stock.financials.financials);
 
     this.renderBalanceSheet(responseFromChannel);
     return;
@@ -12,7 +12,6 @@ App.cable.subscriptions.create('StockChannel', {
     let data = responseFromChannel.users_stock.financials.financials;
 
       // Balance sheet starts here
-      let balanceSheet = document.getElementById('balance_sheet');
 
       let currAssets = document.getElementById('curr_ass');
       let totalAssets = document.getElementById('tot_ass');
@@ -22,10 +21,19 @@ App.cable.subscriptions.create('StockChannel', {
       let totCash = document.getElementById('tot_cash');
       let totDebt = document.getElementById('tot_debt');
       let shareEq = document.getElementById('share_eq');
+      let cashChange = document.getElementById('cash_change');
+      let cashFlow = document.getElementById('cash_flow');
+      let opGainLoss = document.getElementById('op_gainloss');
+
 
 
       for(let i=0; i<data.length; i++){
 
+        if(data[i].currentAssets < 0){
+          currAssets.children[i+1].innerHTML =  "<span class='text-danger'>" + (data[i].currentAssets / 1000).toLocaleString() + "</span>";
+        } else {
+          currAssets.children[i+1].innerHTML =  "<span class='text-success'>" + (data[i].currentAssets / 1000).toLocaleString() + "</span>";
+        }
 
         currAssets.children[i+1].innerHTML = (data[i].currentAssets / 1000).toLocaleString();
 
@@ -43,6 +51,11 @@ App.cable.subscriptions.create('StockChannel', {
 
         shareEq.children[i+1].innerHTML = (data[i].shareholderEquity / 1000).toLocaleString();
 
+        cashChange.children[i+1].innerHTML = (data[i].cashChange / 1000).toLocaleString();
+
+        cashFlow.children[i+1].innerHTML = (data[i].cashFlow / 1000).toLocaleString();
+
+        opGainLoss.children[i+1].innerHTML = (data[i].operatingGainsLosses / 1000).toLocaleString();
 
       }
   }
