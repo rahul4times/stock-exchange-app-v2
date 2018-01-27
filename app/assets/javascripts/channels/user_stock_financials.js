@@ -2,12 +2,12 @@ App.cable.subscriptions.create('StockChannel', {
   received: function(data) {
     let responseFromChannel = data;
 
-    console.log("Financials: ", responseFromChannel.users_stock.financials.financials);
+    //console.log("Financials: ", responseFromChannel.users_stock.financials.financials);
 
-    this.renderUserStockNews(responseFromChannel);
+    this.renderIncomeStatement(responseFromChannel);
     return;
   },
-  renderUserStockNews: function(responseFromChannel) {
+  renderIncomeStatement: function(responseFromChannel) {
 
     let data = responseFromChannel.users_stock.financials.financials;
 
@@ -60,27 +60,6 @@ App.cable.subscriptions.create('StockChannel', {
           incomeStmtHead.appendChild(incomeStmtHeadData);
 
         }
-      }
-
-      // Balance sheet starts here
-
-      for(let i=0; i<5; i++){
-        let currAssets = document.getElementById('curr_ass');
-        let currAssetsData = document.createElement('td');
-        let totalAssets = document.getElementById('tot_ass');
-        let totalAssetsData = document.createElement('td');
-        let totalLiablity = document.getElementById('tot_liab');
-        let totalLiablityData = document.createElement('td');
-        let currCash = document.getElementById('curr_cash');
-        let currCashData = document.createElement('td');
-        let currDebt = document.getElementById('curr_debt');
-        let currDebtData = document.createElement('td');
-        let totCash = document.getElementById('tot_cash');
-        let totCashData = document.createElement('td');
-        let resDev = document.getElementById('tot_debt');
-        let resDevData = document.createElement('td');
-        let opExp = document.getElementById('share_eq');
-        let opExpData = document.createElement('td');
       }
   }
 });

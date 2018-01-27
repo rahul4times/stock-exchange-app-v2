@@ -10,14 +10,14 @@ App.cable.subscriptions.create('StockChannel', {
   renderUserStockHeader: function(responseFromChannel) {
 
     let response = responseFromChannel.users_stock;
-    let companyHeaderDiv = document.getElementById('company_header');
+    // let companyHeaderDiv = document.getElementById('company_header');
 
-     $(companyHeaderDiv).empty();
+     // $(companyHeaderDiv).empty();
 
 
-       let nameSymbol = document.createElement('p');
-       let latestPrice = document.createElement('h1');
-       let changePricePercent = document.createElement('h3');
+       let nameSymbol = document.getElementById('company_header_name')
+       let latestPrice = document.getElementById('company_header_price')
+       let changePricePercent = document.getElementById('company_header_change')
 
        nameSymbol.innerHTML = '<p class="lead">' + responseFromChannel.users_stock.quote.companyName + " (" +
        responseFromChannel.users_stock.quote.symbol + ")" + '</p>';
@@ -36,8 +36,8 @@ App.cable.subscriptions.create('StockChannel', {
          changePricePercent.innerHTML = "<i class='fa fa-minus'></i> <i class='fa fa-minus'></i>";
        }
 
-       companyHeaderDiv.appendChild(nameSymbol);
-       companyHeaderDiv.appendChild(latestPrice);
-       companyHeaderDiv.appendChild(changePricePercent);
+       // companyHeaderDiv.appendChild(nameSymbol);
+       // companyHeaderDiv.appendChild(latestPrice);
+       // companyHeaderDiv.appendChild(changePricePercent);
   }
 });
