@@ -10,10 +10,6 @@ App.cable.subscriptions.create('StockChannel', {
   renderUserStockHeader: function(responseFromChannel) {
 
     let response = responseFromChannel.users_stock;
-    // let companyHeaderDiv = document.getElementById('company_header');
-
-     // $(companyHeaderDiv).empty();
-
 
        let nameSymbol = document.getElementById('company_header_name')
        let latestPrice = document.getElementById('company_header_price')
@@ -36,8 +32,5 @@ App.cable.subscriptions.create('StockChannel', {
          changePricePercent.innerHTML = "<i class='fa fa-minus'></i> <i class='fa fa-minus'></i>";
        }
 
-       // companyHeaderDiv.appendChild(nameSymbol);
-       // companyHeaderDiv.appendChild(latestPrice);
-       // companyHeaderDiv.appendChild(changePricePercent);
   }
 });
