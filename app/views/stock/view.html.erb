@@ -1,17 +1,15 @@
 <div class="jumbotron">
   <div id="company_header">
+    <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
     <p id="company_header_name"></p>
     <h1 id="company_header_price"></h1>
     <h3 id="company_header_change"></h3>
   </div>
-  <hr class="my-4">
-  <p class="lead">
-    <div class="form-group">
-      <%= form_tag(search_stock_path, method: "get") do %>
-        <input type="text" name="query" class="form-control" placeholder="Enter symbol">
-      <% end %>
-    </div>
-  </p>
+  <div class="form-group">
+    <%= form_tag(search_stock_path, method: "get") do %>
+      <input type="text" name="query" class="form-control" placeholder="Enter symbol">
+    <% end %>
+  </div>
 </div>
 
 <div class="row">
@@ -97,116 +95,123 @@
           <tbody>
             <tr id="g_profit">
               <td>Gross profit</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="cost_rev">
               <td>Cost of revenue</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="op_rev">
               <td>Operating revenue</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="op_in">
               <td>Operating income</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr id="net_in">
+              <td>Net income</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="res_dev">
               <td>Research & Development</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="op_ex">
               <td>Operating Expense</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
-            <tr>
+            <thead>
               <th class="text-white">Balance sheet</th>
               <th class="text-right"></th>
               <th class="text-right"></th>
               <th class="text-right"></th>
               <th class="text-right"></th>
-            </tr>
+            </thead>
             <tr id="curr_ass">
               <td>Current assets</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="tot_ass">
               <td>Total assets</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="tot_liab">
               <td>Total liabilities</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="curr_cash">
               <td>Current cash</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="curr_debt">
               <td>Current debt</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="tot_cash">
               <td>Total cash</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="tot_debt">
               <td>Total debt</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr id="share_eq">
               <td>Shareholder equity</td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
-              <td class="text-right"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
-            <tr>
+            <thead>
               <th class="text-white">Cash flow</th>
               <th class="text-right"></th>
               <th class="text-right"></th>
               <th class="text-right"></th>
               <th class="text-right"></th>
-            </tr>
+            </thead>
             <tr id="cash_change">
               <td>Cash change</td>
               <td class="text-right"></td>
@@ -270,7 +275,7 @@
 <script type="text/javascript">
   setInterval(() => {
     fetch('/stock/get_view/<%= @query %>').then(() => {
-      console.log("I fire every 3 sec!!!");
+      // Nothing
     });
   }, 3000);
 </script>
