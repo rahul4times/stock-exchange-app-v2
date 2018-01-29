@@ -1,14 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-12 col-md-4"></div>
+  <div class="col-12 col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <br>
+        <p id="notice"><%= notice %></p>
+        <br>
+        <p>
+          <strong><span class="text-white">Symbol: </span></strong>
+          <%= @favorite_stock.symbol %>
+        </p>
+        <br>
+        <%= link_to 'Edit', edit_favorite_stock_path(@favorite_stock), class: "btn btn-secondary" %>
+        <%= link_to 'Back', favorite_stocks_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-4"></div>
+</div>
+<br>
+<br>
+<br>
+<!-- <p>
   <strong>User:</strong>
   <%= @favorite_stock.user_id %>
-</p>
-
-<p>
-  <strong>Symbol:</strong>
-  <%= @favorite_stock.symbol %>
-</p>
-
-<%= link_to 'Edit', edit_favorite_stock_path(@favorite_stock) %> |
-<%= link_to 'Back', favorite_stocks_path %>
+</p> -->

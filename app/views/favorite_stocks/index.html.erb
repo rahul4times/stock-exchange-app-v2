@@ -1,29 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Favorite Stocks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <!-- <th>User</th> -->
-      <th>Symbol</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @favorite_stocks.each do |favorite_stock| %>
-      <tr>
-        <!-- <td><%= favorite_stock.user_id %></td> -->
-        <td><%= favorite_stock.symbol %></td>
-        <td><%= link_to ' Show ', favorite_stock %></td>
-        <td><%= link_to ' Edit ', edit_favorite_stock_path(favorite_stock) %></td>
-        <td><%= link_to ' Delete ', favorite_stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="jumbotron">
+  <h1 class="display-3">My Stocks</h1>
+  <hr class="my-4">
+  <%= link_to 'Add Stock', new_favorite_stock_path, class: "btn btn-success" %>
+  <br>
+  <p id="notice"><%= notice %></p>
+</div>
+<div class="row">
+  <div class="col-12 col-md-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <!-- <th>User</th> -->
+          <th class="text-white">Stock Symbol</th>
+          <th class="text-white">Edit</th>
+          <th class="text-white">Delete</th>
+          <!-- <th colspan="3"></th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <% @favorite_stocks.each do |favorite_stock| %>
+          <tr>
+            <!-- <td><%= favorite_stock.user_id %></td> -->
+            <td><%= favorite_stock.symbol %></td>
+            <!-- <td><%= link_to ' Show ', favorite_stock %></td> -->
+            <td><%= link_to ' Edit ', edit_favorite_stock_path(favorite_stock), class: "btn btn-secondary btn-sm" %></td>
+            <td><%= link_to ' Delete ', favorite_stock, class: "btn btn-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 <br>
-
-<%= link_to 'New Favorite Stock', new_favorite_stock_path %>

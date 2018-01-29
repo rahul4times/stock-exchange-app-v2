@@ -1,21 +1,39 @@
-<%= form_with(model: favorite_stock, local: true) do |form| %>
-  <% if favorite_stock.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(favorite_stock.errors.count, "error") %> prohibited this favorite_stock from being saved:</h2>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-12 col-md-4"></div>
+    <div class="col-12 col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <%= form_with(model: favorite_stock, local: true) do |form| %>
+            <% if favorite_stock.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(favorite_stock.errors.count, "error") %> prohibited this favorite_stock from being saved:</h2>
 
-      <ul>
-      <% favorite_stock.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                <ul>
+                <% favorite_stock.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="form-group">
+              <%= form.label :symbol %>
+              <%= form.text_field :symbol, id: :favorite_stock_symbol, class: "form-control" %>
+            </div>
+            <br>
+            <div class="actions">
+              <%= form.submit 'Add Stock', class: "btn btn-secondary" %>
+              <%= link_to 'Back', favorite_stocks_path, class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
     </div>
-  <% end %>
-  <div class="field">
-    <%= form.label :symbol %>
-    <%= form.text_field :symbol, id: :favorite_stock_symbol %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <div class="col-12 col-md-4"></div>
+</div>
+<br>
+<br>
+<br>
