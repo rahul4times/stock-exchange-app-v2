@@ -10,7 +10,7 @@ function convertToServerTimeZone() {
   document.getElementById("market").innerHTML = serverDate.toDateString() + " | " + serverDate.toLocaleTimeString();
 
   if ((clientDate.getHours() > 6 && clientDate.getHours() < 13) &&
-        (clientDate.getDay() > 1 && clientDate.getDay() < 6)) {
+        (clientDate.getDay() > 0 && clientDate.getDay() < 6)) {
     document.getElementById('date_time').innerHTML = 'Market is open ' + ' <span class="text-success"><small><i class="fa fa-circle" aria-hidden="true"></i></small></span>';
   }
   else {

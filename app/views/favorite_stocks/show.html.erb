@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @favorite_stock.user_id %>
+</p>
+
+<p>
+  <strong>Symbol:</strong>
+  <%= @favorite_stock.symbol %>
+</p>
+
+<%= link_to 'Edit', edit_favorite_stock_path(@favorite_stock) %> |
+<%= link_to 'Back', favorite_stocks_path %>

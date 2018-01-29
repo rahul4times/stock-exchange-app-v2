@@ -1,0 +1,2 @@
+class FavoriteStock < ApplicationRecord
+end
