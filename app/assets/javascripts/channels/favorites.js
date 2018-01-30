@@ -35,7 +35,7 @@ App.cable.subscriptions.create('FavoriteChannel', {
         "<i class='fa fa-arrow-up'></i>  " + response.my_favorites[key].quote.change.toFixed(2) +
         " (" + ((response.my_favorites[key].quote.changePercent) * 100).toFixed(2) + " %)" + "</span>";
       }
-
+      
       tRow.appendChild(symbol);
       tRow.appendChild(company);
       tRow.appendChild(latestPrice);
