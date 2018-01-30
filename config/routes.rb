@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'learn/show'
+
   resources :favorite_stocks
   # User profile page
   get 'user/:id', to: "user#show", as: "user"
