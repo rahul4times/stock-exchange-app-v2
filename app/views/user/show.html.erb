@@ -2,41 +2,32 @@
   <h1 class="display-3">Welcome</h1>
   <p class="lead"><%= @user.email %></p>
   <p id="notice"><%= notice %></p>
+
+  <p id="date_time" class="lead"></p>
+  <p id="market" class="lead"></p>
 </div>
 
 <div class="row">
-  <div class="col-12 col-md-3">
-    <div class="card mb-3">
-      <h3 class="card-header">Head</h3>
-      <div class="card-body text-center">
-
-      </div>
-    </div>
-</div>
   <div class="col-12 col-md-9">
     <div class="card mb-3">
       <h3 class="card-header">Your current stocks</h3>
       <div class="card-body">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <table class="table table-hover">
+          <thead class="text-white">
+            <th>Symbol</th>
+            <th>Company Name</th>
+            <th>Latest Price</th>
+            <th>Change</th>
+          </thead>
+          <tbody>
+            <tr id="favorites_stocks">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

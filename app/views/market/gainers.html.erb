@@ -3,15 +3,14 @@
   <p id="date_time" class="lead"></p>
   <p id="market" class="lead"></p>
   <hr class="my-4">
-  <p class="lead">
-
-    <div class="form-group">
+  <div class="form-group row">
+    <div class="col-12 col-md-7">
       <%= form_tag(search_stock_path, method: "get") do %>
-        <input type="text" name="query" class="form-control" placeholder="Enter symbol">
+        <input type="text" name="query" class="form-control" placeholder="Enter stock symbol">
       <% end %>
     </div>
-
-  </p>
+  </div>
+  <p id="notice"><%= notice %></p>
 </div>
 
 <div class="row">

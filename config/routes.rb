@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   get 'learn/show'
 
+
   resources :favorite_stocks
+
   # User profile page
   get 'user/:id', to: "user#show", as: "user"
 
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
   # Public view stock page
   get 'stock/get_view/:stock', to: 'stock#get_view'
   get 'stock/view' => 'stock#view', as: 'search_stock'
+
 
   devise_for :users
 

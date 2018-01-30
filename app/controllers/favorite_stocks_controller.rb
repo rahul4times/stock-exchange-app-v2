@@ -56,7 +56,7 @@ class FavoriteStocksController < ApplicationController
   def destroy
     @favorite_stock.destroy
     respond_to do |format|
-      format.html { redirect_to favorite_stocks_url, notice: 'Favorite stock was successfully destroyed.' }
+      format.html { redirect_to favorite_stocks_url, notice: 'Favorite stock was successfully deleted.' }
       format.json { head :no_content }
     end
   end
