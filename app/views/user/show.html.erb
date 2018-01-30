@@ -2,7 +2,6 @@
   <h1 class="display-3">Welcome</h1>
   <p class="lead"><%= @user.email %></p>
   <p id="notice"><%= notice %></p>
-
   <p id="date_time" class="lead"></p>
   <p id="market" class="lead"></p>
 </div>
@@ -33,3 +32,10 @@
   </div>
 </div>
 <br>
+<script type="text/javascript">
+  setInterval(() => {
+    fetch('/get_show/<%=@user.id%>').then(() => {
+
+    });
+  }, 3000);
+</script>

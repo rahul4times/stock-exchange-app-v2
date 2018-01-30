@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :favorite_stocks
 
   # User profile page
+  get 'get_show/:id', to: "user#get_show"
   get 'user/:id', to: "user#show", as: "user"
 
   #  Home page
