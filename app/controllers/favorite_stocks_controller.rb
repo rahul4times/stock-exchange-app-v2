@@ -4,7 +4,8 @@ class FavoriteStocksController < ApplicationController
   # GET /favorite_stocks
   # GET /favorite_stocks.json
   def index
-    @favorite_stocks = FavoriteStock.all
+    # @favorite_stocks = FavoriteStock.all
+    @favorite_stocks = FavoriteStock.where(:user_id => current_user)
   end
 
   # GET /favorite_stocks/1
