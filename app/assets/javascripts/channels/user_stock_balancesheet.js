@@ -2,7 +2,7 @@ App.cable.subscriptions.create('StockChannel', {
   received: function(data) {
     let responseFromChannel = data;
 
-    console.log("Financials: ", responseFromChannel.users_stock);
+    //console.log("Financials: ", responseFromChannel.users_stock);
 
     this.renderBalanceSheet(responseFromChannel);
     return;

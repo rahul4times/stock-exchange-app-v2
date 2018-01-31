@@ -1,16 +1,17 @@
 <div class="jumbotron">
   <div id="company_header">
-    <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
     <p id="company_header_name"></p>
     <h1 id="company_header_price"></h1>
     <h3 id="company_header_change"></h3>
     <p id="date_time" class="lead"></p>
     <p id="market" class="lead"></p>
   </div>
-  <div class="form-group">
-    <%= form_tag(search_stock_path, method: "get") do %>
-      <input type="text" name="query" class="form-control" placeholder="Enter symbol">
-    <% end %>
+  <div class="form-group row">
+    <div class="col-12 col-md-7">
+      <%= form_tag(search_stock_path, method: "get") do %>
+        <input type="text" name="query" class="form-control" placeholder="Enter symbol">
+      <% end %>
+    </div>
   </div>
 </div>
 

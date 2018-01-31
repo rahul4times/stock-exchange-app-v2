@@ -22,7 +22,7 @@ App.cable.subscriptions.create('FavoriteChannel', {
       let latestPrice = document.createElement('td');
       let change = document.createElement('td');
 
-      symbol.innerHTML = response.my_favorites[key].quote.symbol;
+      symbol.innerHTML = "<a href=/stock/view?utf8=✓&query=" + response.my_favorites[key].quote.symbol + ">" + response.my_favorites[key].quote.symbol + "</a>";
       company.innerHTML = response.my_favorites[key].quote.companyName;
       latestPrice.innerHTML = response.my_favorites[key].quote.latestPrice;
 
@@ -35,7 +35,7 @@ App.cable.subscriptions.create('FavoriteChannel', {
         "<i class='fa fa-arrow-up'></i>  " + response.my_favorites[key].quote.change.toFixed(2) +
         " (" + ((response.my_favorites[key].quote.changePercent) * 100).toFixed(2) + " %)" + "</span>";
       }
-      
+
       tRow.appendChild(symbol);
       tRow.appendChild(company);
       tRow.appendChild(latestPrice);

@@ -2,7 +2,7 @@ App.cable.subscriptions.create('StockChannel', {
   received: function(data) {
     let responseFromChannel = data;
 
-    // console.log("User Stock: ", responseFromChannel.users_stock);
+    //console.log("User Stock: ", responseFromChannel.users_stock);
 
     this.renderUserStockHeader(responseFromChannel);
     return;

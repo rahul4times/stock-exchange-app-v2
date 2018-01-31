@@ -19,7 +19,7 @@ App.cable.subscriptions.create('MarketChannel', {
       let priceChange = document.createElement('td');
       let lastPrice = document.createElement('td');
 
-      companySymbol.innerHTML = responseFromChannel.most_gainers[i].symbol +
+      companySymbol.innerHTML = "<a href=/stock/view?utf8=✓&query=" + responseFromChannel.most_gainers[i].symbol + ">" + responseFromChannel.most_gainers[i].symbol + "</a>" +
       "<br><span style='font-size: 11px;'>" + responseFromChannel.most_gainers[i].companyName.substr(0,20) + "</span>";
 
       if(responseFromChannel.most_gainers[i].change < 0){
